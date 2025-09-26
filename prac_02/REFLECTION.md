@@ -1,0 +1,1 @@
+So far, I have watched 80% of the lecture videos. I usually watch them at home in the evening or at school when I have no classes.
