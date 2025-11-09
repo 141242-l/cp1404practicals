@@ -18,3 +18,28 @@ def save_guitars(filename, guitars):
         for guitar in guitars:
             print(f"{guitar.name},{guitar.year},{guitar.cost}", file=out_file)
 
+def display_guitars(guitars):
+    if not guitars:
+        print("No guitars to display.")
+        return
+    print("Guitars:")
+    index = 1
+    for guitar in guitars:
+        print(f"{index}. {guitar}")
+        index += 1
+
+def add_new_guitars():
+    new_guitars = []
+    print("Add new guitars (leave name blank to finish):")
+    name = input("Name: ").strip()
+    while name:
+        try:
+            year = int(input("Year: "))
+            cost = float(input("Cost: $"))
+            new_guitar = Guitar(name, year, cost)
+            new_guitars.append(new_guitar)
+            print(f"{new_guitar} added.")
+        except ValueError:
+            print("Invalid input. Please enter valid year and cost.")
+        name = input("Name: ").strip()
+    return new_guitars
