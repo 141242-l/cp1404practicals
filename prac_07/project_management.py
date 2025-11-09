@@ -30,4 +30,13 @@ def display_projects(projects):
         else:
             incomplete.append(project)
 
+    incomplete.sort()
+    complete.sort()
+    print("Incomplete projects:")
+    for p in incomplete:
+        print(f"  {p}")
+    print("Completed projects:")
+    for p in complete:
+        print(f"  {p}")
+
 
