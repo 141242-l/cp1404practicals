@@ -95,7 +95,7 @@ def run_menu(projects):
     elif choice == "s":
         filename = input("Filename: ")
         save_projects(filename, projects)
-    elif choice == "f":
+    elif choice == "d":
         display_projects(projects)
     elif choice == "f":
         date_str = input("Show projects that start after date (dd/mm/yyyy): ")
