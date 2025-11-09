@@ -87,4 +87,34 @@ def run_menu(projects):
           "- (U)pdate project\n"
           "- (Q)uit")
 
+    choice = input(">>> ").strip().lower()
+
+    if choice == "l":
+        filename = input("Filename: ")
+        projects = load_projects(filename)
+    elif choice == "s":
+        filename = input("Filename: ")
+        save_projects(filename, projects)
+    elif choice == "f":
+        display_projects(projects)
+    elif choice == "f":
+        date_str = input("Show projects that start after date (dd/mm/yyyy): ")
+        filter_projects_by_date(projects, date_str)
+    elif choice == "a":
+        add_project(projects)
+    elif choice == "u":
+        update_project(projects)
+    elif choice == "q":
+        save_choice = input("Would you like to save to projects.txt? ").strip().lower()
+        if save_choice in ("yes", "y"):
+            save_projects(FILENAME, projects)
+        print("Thank you for using custom-built project management software.")
+        return  # Exit the recursive loop
+    else:
+        print("Invalid option")
+
+    run_menu(projects)
+
+main()
+
 
