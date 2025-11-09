@@ -43,3 +43,21 @@ def add_new_guitars():
             print("Invalid input. Please enter valid year and cost.")
         name = input("Name: ").strip()
     return new_guitars
+
+def main():
+    guitars = load_guitars(FILENAME)
+    print("These are the guitars loaded:")
+    display_guitars(guitars)
+
+    guitars.sort()
+    print("\nGuitars sorted by year:")
+    display_guitars(guitars)
+
+    new_guitars = add_new_guitars()
+    guitars.extend(new_guitars)
+
+    guitars.sort()
+    save_guitars(FILENAME, guitars)
+    print(f"\n{len(new_guitars)} new guitars added and saved to {FILENAME}.")
+
+main()
