@@ -72,3 +72,10 @@ def update_project(projects):
         project.priority = int(new_priority)
 
 
+def main():
+    print("Welcome to Pythonic Project Management")
+    projects = load_projects(FILENAME)
+    print(f"Loaded {len(projects)} projects from {FILENAME}")
+    run_menu(projects)
+
+
