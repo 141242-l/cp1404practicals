@@ -78,4 +78,13 @@ def main():
     print(f"Loaded {len(projects)} projects from {FILENAME}")
     run_menu(projects)
 
+def run_menu(projects):
+    print("- (L)oad projects\n"
+          "- (S)ave projects\n"
+          "- (D)isplay projects\n"
+          "- (F)ilter projects by date\n"
+          "- (A)dd new project\n"
+          "- (U)pdate project\n"
+          "- (Q)uit")
+
 
