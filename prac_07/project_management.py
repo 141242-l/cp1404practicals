@@ -39,4 +39,36 @@ def display_projects(projects):
     for p in complete:
         print(f"  {p}")
 
+def filter_projects_by_date(projects, date_str):
+    date = datetime.strptime(date_str, "%d/%m/%Y").date()
+    filtered_projects = []
+    for p in projects:
+        if p.start_date > date:
+            filtered_projects.append(p)
+    filtered_projects.sort(key=lambda x: x.start_date)
+    for p in filtered_projects:
+        print(p)
+
+def add_project(projects):
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yyyy): ")
+    priority = int(input("Priority: "))
+    cost = float(input("Cost estimate: $"))
+    completion = int(input("Percent complete: "))
+    projects.append(Project(name, start_date, priority, cost, completion))
+
+def update_project(projects):
+    for i, p in enumerate(projects):
+        print(f"{i} {p}")
+    choice = int(input("Project choice: "))
+    project = projects[choice]
+    print(project)
+    new_completion = input("New Percentage: ")
+    if new_completion != "":
+        project.completion_percentage = int(new_completion)
+    new_priority = input("New Priority: ")
+    if new_priority != "":
+        project.priority = int(new_priority)
+
 
