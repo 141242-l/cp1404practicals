@@ -23,13 +23,13 @@ class MilesConverterApp(App):
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
- def handle_calculate(self):
+    def handle_calculate(self):
         """ handle calculation (could be button press or other call), output result to label widget """
         miles = self.get_validated_miles()
         km = miles * MILES_TO_KM
         self.output_text = f"{km:.5f}"
 
- def handle_increment(self, change):
+    def handle_increment(self, change):
         miles = self.get_validated_miles()
         miles += change
         self.root.ids.input_miles.text = str(miles)
@@ -37,12 +37,10 @@ class MilesConverterApp(App):
 
 
 def get_validated_miles(self):
-    """
-    get text input from text entry widget, convert to float
-    :return: 0 if error, float version of text if valid
-    """
     try:
         value = float(self.root.ids.input_miles.text)
         return value
     except ValueError:
         return 0
+
+MilesConverterApp().run()
