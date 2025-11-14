@@ -1,19 +1,26 @@
 BoxLayout:
-    orientation: 'horizontal'
+    orientation: 'vertical'
 
+    BoxLayout:  # Top section (horizontal layout)
+        orientation: 'horizontal'
 
-    TextInput:
-        id: input_number
-        text: '7'
-        font_size: 48
-        multiline: False
+        TextInput:
+            id: input_number
+            text: '7'
+            font_size: 48
+            multiline: False
 
-    Button:
-        text: 'Square'
-        # the following line specifies the function in the app class to call when the button is pressed
-        on_press: app.handle_calculate(input_number.text)
+        Button:
+            text: 'Square'
+            on_press: app.handle_calculate(input_number.text)
 
-    Label:
-        id: output_label
-        font_size: 48
-        color: (1, 0.4, 0.7, 1)  # Pink (RGBA)
+        Label:
+            id: output_label
+            font_size: 48
+            color: (1, 0.4, 0.7, 1)  # Pink (RGBA)
+
+    BoxLayout:  # Bottom section with one label
+        size_hint_y: 0.3
+        Label:
+            text: 'Enter a number and press "Square"'
+            font_size: 16
