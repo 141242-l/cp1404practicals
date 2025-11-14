@@ -22,3 +22,10 @@ class MilesConverterApp(App):
         self.output_text = "0.0"
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
+
+ def handle_calculate(self):
+        """ handle calculation (could be button press or other call), output result to label widget """
+        miles = self.get_validated_miles()
+        km = miles * MILES_TO_KM
+        self.output_text = f"{km:.5f}"
+
