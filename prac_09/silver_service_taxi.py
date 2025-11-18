@@ -12,3 +12,7 @@ class SilverServiceTaxi(Taxi):
         """Rewrite, return fare plus flagfall"""
         base_fare = super().get_fare()
         return base_fare + self.flagfall
+
+    def __str__(self):
+        """Add flagfall information based on the parent class string"""
+        return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
