@@ -16,3 +16,12 @@ def choose_taxi(taxis):
     except ValueError:
         print("Invalid input; enter a number")
     return None
+
+def main():
+    taxis = [
+        Taxi("Prius", 100, 1.23),
+        SilverServiceTaxi("Limo", 100, 2),
+        SilverServiceTaxi("Hummer", 200, 4)
+    ]
+    current_taxi = None
+    total_bill = 0.0
