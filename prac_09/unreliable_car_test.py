@@ -17,3 +17,10 @@ def test_unreliable_car():
 
     print(f"Low reliability car drove {low_drive_count} times out of {test_attempts}")
     print(f"High reliability car drove {high_drive_count} times out of {test_attempts}")
+
+    if low_drive_count < high_drive_count:
+        print("Test passed: Low reliability car drove less than high reliability car.")
+    else:
+        print("Test failed: Unexpected drive behavior. (Try increasing number of attempts or checking logic.)")
+
+test_unreliable_car()
