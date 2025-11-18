@@ -6,3 +6,13 @@ def show_taxis(taxis):
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
 
+def choose_taxi(taxis):
+    try:
+        choice = int(input("Choose taxi: "))
+        if 0 <= choice < len(taxis):
+            return taxis[choice]
+        else:
+            print("Invalid taxi choice")
+    except ValueError:
+        print("Invalid input; enter a number")
+    return None
