@@ -54,3 +54,13 @@ def main():
                     print("Invalid distance")
         else:
             print("Invalid option")
+
+        print(f"Bill to date: ${total_bill:.2f}")
+        print("q)uit, c)hoose taxi, d)rive")
+        choice = input(">>> ").lower()
+
+    print(f"Total trip cost: ${total_bill:.2f}")
+    print("Taxis are now:")
+    show_taxis(taxis)
+
+main()
