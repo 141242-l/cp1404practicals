@@ -25,3 +25,32 @@ def main():
     ]
     current_taxi = None
     total_bill = 0.0
+
+    print("Let's drive!")
+    print("q)uit, c)hoose taxi, d)rive")
+    choice = input(">>> ").lower()
+
+    while choice != 'q':
+        if choice == 'c':
+            show_taxis(taxis)
+            selected_taxi = choose_taxi(taxis)
+            if selected_taxi:
+                current_taxi = selected_taxi
+        elif choice == 'd':
+            if current_taxi is None:
+                print("You need to choose a taxi before you can drive")
+            else:
+                try:
+                    distance = float(input("Drive how far? "))
+                    if distance >= 0:
+                        current_taxi.start_fare()
+                        current_taxi.drive(distance)
+                        trip_cost = current_taxi.get_fare()
+                        print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+                        total_bill += trip_cost
+                    else:
+                        print("Distance must be >= 0")
+                except ValueError:
+                    print("Invalid distance")
+        else:
+            print("Invalid option")
