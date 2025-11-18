@@ -10,3 +10,7 @@ class Band:
         """Return string representation of the Band, including member details."""
         members_str = ", ".join(str(musician) for musician in self.members)
         return f"{self.name} ({members_str})"
+
+    def add(self, musician):
+        """Add a musician to the band."""
+        self.members.append(musician)
