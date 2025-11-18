@@ -14,3 +14,7 @@ class Band:
     def add(self, musician):
         """Add a musician to the band."""
         self.members.append(musician)
+
+    def play(self):
+        """Simulate all musicians in the band playing their instruments."""
+        return "\n".join(musician.play() for musician in self.members)
