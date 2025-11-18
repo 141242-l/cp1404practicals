@@ -8,3 +8,12 @@ def test_unreliable_car():
     low_drive_count = 0
     high_drive_count = 0
     test_attempts = 100
+
+    for i in range(test_attempts):
+        if low_reliability_car.drive(1) > 0:
+            low_drive_count += 1
+        if high_reliability_car.drive(1) > 0:
+            high_drive_count += 1
+
+    print(f"Low reliability car drove {low_drive_count} times out of {test_attempts}")
+    print(f"High reliability car drove {high_drive_count} times out of {test_attempts}")
