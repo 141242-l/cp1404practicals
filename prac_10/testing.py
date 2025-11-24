@@ -58,15 +58,18 @@ run_tests()
 # doctest.testmod()
 def format_sentence(phrase):
     """
-        Format the phrase as a sentence, starting with a capital and ending with a full stop.
-        >>> format_sentence("hello")
-        'Hello.'
-        >>> format_sentence("It is an ex parrot.")
-        'It is an ex parrot.'
-        >>> format_sentence("hello world")
-        'Hello world.'
+    Format the phrase as a sentence, starting with a capital and ending with a full stop.
+    >>> format_sentence("hello")
+    'Hello.'
+    >>> format_sentence("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> format_sentence("hello world")
+    'Hello world.'
     """
     phrase = phrase.strip()
+    if not phrase.endswith('.'):
+        phrase += '.'
+    return phrase[0].upper() + phrase[1:]
 
 # TODO: 4. Fix the failing is_long_word function
 # (Don't change the tests, change the function!)
