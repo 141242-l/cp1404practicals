@@ -50,7 +50,6 @@ def run_tests():
     car_default = Car()
     assert car_default.fuel == 0, "Car does not set default fuel correctly"
 
-
 run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
@@ -70,6 +69,7 @@ def format_sentence(phrase):
     if not phrase.endswith('.'):
         phrase += '.'
     return phrase[0].upper() + phrase[1:]
+
 
 # TODO: 4. Fix the failing is_long_word function
 # (Don't change the tests, change the function!)
