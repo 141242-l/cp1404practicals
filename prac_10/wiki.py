@@ -16,3 +16,9 @@ def main():
             print(f'Page id "{title}" does not match any pages. Try another id!')
         except Exception as e:
             print(f"An error occurred: {e}")
+
+        title = input("\nEnter page title: ").strip()
+
+    print("Thank you.")
+
+main()
