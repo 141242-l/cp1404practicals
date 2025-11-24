@@ -36,7 +36,7 @@ I affirmed the parts he did well and also analyzed the structure of the code. I 
 ### Good Code Review 2
 https://github.com/HuBohong/cp1404practicals/pull/3
 ### Explanation
-This review included constructive feedback on consistency in code formatting, logic flow improvements, and encouraging the use of constants instead of magic numbers. I also acknowledged what was done well to keep the feedback balanced.
+This review included constructive feedback on consistency in code formatting, logic flow improvements, and encouraging the use of constants instead of magic numbers. And I also acknowledged what was done well to keep the feedback balanced.
 
 # Practicals
 ## Regarding the practical tasks overall, what would you change if you were in charge of the subject?
